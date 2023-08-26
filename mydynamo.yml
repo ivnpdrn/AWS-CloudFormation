@@ -1,4 +1,4 @@
-AWStemplateFormatVersion: '2010-09-09'
+AWSTemplateFormatVersion: '2010-09-09'
 
 Parameters: 
   DynamoAtributo: 
@@ -14,22 +14,22 @@ Resources:
         - AttributeName: 
             Ref: DynamoAtributo
           AttributeType: S
-      KeySchema:
+    KeySchema:
         - AttributeName: 
             Ref: DynamoAtributo
           KeyType: HASH 
-      BillingMode: PAY_PER_REQUEST          
-      SSESpecification: 
-        SSESpecification:
-           SSEEEnabled: true
-      TableName: 
-        Ref: NombreDynamo
+    BillingMode: PAY_PER_REQUEST          
+    SSESpecification: 
+      SSESpecification:
+           SSEEnabled: true
+    TableName: 
+      Ref: NombreDynamo
 Outputs: 
     NombreDynamo: 
       Value: 
         Ref: DynamodesdeCero
       Export: 
-      Name: NombreDynamo
+        Name: NombreDynamo
 
        
 
