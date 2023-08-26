@@ -1,18 +1,18 @@
 AWStemplateFormatVersion: '2021-06-01'
 
-Parameters:
-  DynamoAtributo: 
-    Type: String
+# Parameters:
+  # DynamoAtributo: 
+    # Type: String
 
 Resources: 
   DynamodesdeCero:  
     Type: AWS::DynamoDB::GlobalTable
     Properties: 
       AttributeDefinitions: 
-        - AttributeName: !Ref DynamoAtributo
+        - AttributeName: DynamoAtributo # Using the attribute name directly
           AttributeType: S
       KeySchema:
-        - AttributeName: !Ref DynamoAtributo
+        - AttributeName: DynamoAtributo # Using the attribute name directly
           KeyType: HASH 
       BillingMode: PAY_PER_REQUEST          
       SSESpecification: 
