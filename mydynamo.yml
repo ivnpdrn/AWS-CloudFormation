@@ -1,4 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
+
 Parameters:
   DinamoAtributo:
     Type: String
@@ -10,22 +11,20 @@ Resources:
     Type: AWS::DynamoDB::Table
     Properties:
       AttributeDefinitions:
-        - AttributeName:Ref: DynamoAtributo
+        - AttributeName: !Ref DinamoAtributo
           AttributeType: S
       KeySchema:
-        - AttributeName:Ref: DynamoAtributo
+        - AttributeName: !Ref DinamoAtributo
           KeyType: HASH
       BillingMode: PAY_PER_REQUEST
       SSESpecification:
         SSEEnabled: true
-      TableName:Ref: NombreDynamo
+      TableName: !Ref NombreDynamo
 
 Outputs:
   NombreDynamo:
-    Value: 
-      Ref: DynamoDesdeCero
+    Value: !Ref DynamoDesdeCero
     Export:
-      Map:
-        Name: DynamoDesdeCero
-       
+      Name: !Sub "${AWS::StackName}-NombreDynamo"
+      
 
