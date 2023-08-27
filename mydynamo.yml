@@ -25,6 +25,6 @@ Outputs:
   NombreDynamo:
     Value: !Ref DynamoDesdeCero
     Export:
-      Name: !Sub "${AWS::StackName}-NombreDynamo"
+      Name: NombreDynamo
       
 
